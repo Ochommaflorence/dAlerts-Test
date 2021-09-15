@@ -4,7 +4,7 @@ import { BsBell } from "react-icons/bs";
 const Navbar = () => {
   return (
     <>
-      <nav className="My-container py-5 flex justify-between">
+      <nav className="My-container py-5 flex justify-between sticky top-0 w-full">
         <div className="flex items-center">
           <div>
             <div className="flex justify-center">
