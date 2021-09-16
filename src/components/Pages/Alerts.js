@@ -2,16 +2,15 @@ import React, { useContext, useState } from "react";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import { DataContext } from "../DataProvider";
-import validate from '../Validate'
-
+import validate from "../Validate";
 
 const initialState = {
-    firstName: "",
-    lastName: "",
-    story: "",
-    status: "",
-    avatar: "",
-  };
+  firstName: "",
+  lastName: "",
+  story: "",
+  status: "",
+  avatar: "",
+};
 
 const Alerts = () => {
   const [open, setOpen] = useState(false);
@@ -19,7 +18,6 @@ const Alerts = () => {
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
 
-  
   const [people, setPeople] = useContext(DataContext);
 
   const [person, setPerson] = useState(initialState);
@@ -40,7 +38,7 @@ const Alerts = () => {
       setPerson(initialState);
       setErrorMsg(initialState);
       document.getElementById("clearInput").reset();
-      alert('alert created');
+      alert("alert created");
     }
   };
 
@@ -61,9 +59,29 @@ const Alerts = () => {
               +New Alert
             </li>
           </ul>
+
+          <div class="p-8">
+  <div class="bg-white flex items-center rounded-full shadow-xl">
+    <input class="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="search" type="text" placeholder="Search"/>
+    
+    <div class="p-4">
+      <button class="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center">
+        icon
+      </button>
+      </div>
+    </div>
+  </div>
+
           {/* Alert Modal */}
           <Modal open={open} onClose={onCloseModal} center>
-            <div className="p-10">modal</div>
+            <div className="p-10">
+              <form>
+                <label>first name</label>
+                <input type="text" />
+                <label>second name</label>
+                <input type="text" />
+              </form>
+            </div>
           </Modal>
         </div>
       </div>
